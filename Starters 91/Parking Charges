@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int X, Y, H;
+    cin >> X >> Y >> H;
+
+    int total = X + Y * (H - 1);
+    cout << total << endl;
+
+    return 0;
+}
