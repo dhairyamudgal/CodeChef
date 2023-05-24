@@ -1,0 +1,50 @@
+def solve():
+    n, k = map(int, input().split())
+
+    if k * 2 > n:
+        print("no")
+        return
+
+    odds = (n + 1) // 2
+    if odds < k:
+        print("no")
+        return
+
+    rem = odds - k
+    if rem % 2 == 0:
+        print("YES")
+    else:
+        print("NO")
+
+
+t = int(input())
+for _ in range(t):
+    solve()
+
+XOR & Sum
+def count_numbers(l, r):
+    # Find the most significant bit position where l and r differ
+    msb = 0
+    while l != r:
+        l >>= 1
+        r >>= 1
+        msb += 1
+
+    # Calculate the number of non-negative integers x satisfying the requirements
+    count = (1 << msb) - 1 if l == r else (1 << msb)
+
+    return count
+
+# Read the number of test cases
+T = int(input())
+
+# Iterate over the test cases
+for _ in range(T):
+    # Read l and r for the current test case
+    l, r = map(int, input().split())
+
+    # Count the number of non-negative integers x satisfying the requirements
+    result = count_numbers(l, r)
+
+    # Print the output
+    print(result)
