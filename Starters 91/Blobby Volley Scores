@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void calculateScores(int N, string S) {
+    int aliceScore = 0;
+    int bobScore = 0;
+    char server = 'A'; // Alice is the initial server
+
+    for (int i = 0; i < N; i++) {
+        if (S[i] == server) {
+            // Server wins the point
+            if (server == 'A') {
+                aliceScore++;
+            } else {
+                bobScore++;
+            }
+        } else {
+            // Receiver wins the point
+            server = (server == 'A') ? 'B' : 'A';
+        }
+    }
+
+    cout << aliceScore << " " << bobScore << endl;
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+        string S;
+        cin >> S;
+
+        calculateScores(N, S);
+    }
+
+    return 0;
+}
+ 
