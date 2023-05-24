@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+string classifySeat(int seatNumber) {
+    if (seatNumber >= 1 && seatNumber <= 15) {
+        if (seatNumber == 11 || seatNumber == 12 || seatNumber == 13 || seatNumber == 14 || seatNumber == 15)
+            return "Lower Single";
+        else
+            return "Lower Double";
+    } else if (seatNumber >= 16 && seatNumber <= 30) {
+        if (seatNumber == 26 || seatNumber == 27 || seatNumber == 28 || seatNumber == 29 || seatNumber == 30)
+            return "Upper Single";
+        else
+            return "Upper Double";
+    } else {
+        return "Invalid seat number";
+    }
+}
