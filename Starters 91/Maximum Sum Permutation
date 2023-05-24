@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+void rearrangeArray(int T) {
+    for (int t = 0; t < T; t++) {
+        int N, Q;
+        cin >> N >> Q;
+
+        vector<int> A(N);
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];
+        }
+
+        vector<pair<int, int>> queries(Q);
+        for (int i = 0; i < Q; i++) {
+            cin >> queries[i].first >> queries[i].second;
+        }
+
+        vector<long long> prefix(N + 1, 0);
+        for (int i = 1; i <= N; i++) {
+            prefix[i] = prefix[i - 1] + A[i - 1];
+        }
+
+        sort(A.rbegin(), A.rend());
+
+        long long X = 0;
+        for (int i = 0; i < Q; i++) {
+            int L = queries[i].first;
+            int R = queries[i].second;
+            X += prefix[R] - prefix[L - 1];
+        }
+
+        cout << X << endl;
+        for (int i = 0; i < N; i++) {
+            cout << A[i] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    rearrangeArray(T);
+
+    return 0;
+}
