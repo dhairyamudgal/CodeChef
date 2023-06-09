@@ -1,0 +1,36 @@
+def is_good_string(N, S):
+    open_count = 0
+    T = ""
+    for i in range(N):
+        if S[i] == 'a':
+            T += '('
+            open_count += 1
+        else:
+            if open_count > 0:
+                T += ')'
+                open_count -= 1
+            else:
+                T += '('
+                open_count += 1
+    if open_count == 0:
+        return "YES", T
+    else:
+        return "NO", None
+
+# Read the number of test cases
+T = int(input())
+
+for _ in range(T):
+    # Read the length of the string
+    N = int(input())
+    # Read the string
+    S = input()
+
+    # Check if it is possible to convert the string
+    result, converted_string = is_good_string(N, S)
+
+    # Print the result
+    print(result)
+    if result == "YES":
+        print(converted_string)
+

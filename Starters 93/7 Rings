@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int T;
+	cin>>T;
+	
+	while(T>0){
+	    int N;
+	    int X;
+	    
+	    cin>>N>>X;
+	    
+	    int amount = N * X;
+	    if(amount>=10000 && amount<=99999){
+	        cout<<"YES"<<endl;
+	    }
+	    else{
+	        cout<<"NO"<<endl;
+	    }
+	    
+	    T--;
+	}
+	
+	return 0;
+}
+

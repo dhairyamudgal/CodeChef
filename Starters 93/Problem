@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+string checkProblems(int num1, int num2) {
+    if (num1 == num2) {
+        return "YES";
+    }
+    
+  
+    int difference = abs(num1 - num2);
+    if (difference % 2 == 0 || difference % 4 == 0) {
+        return "YES";
+    }
+    
+    return "NO";
+}
+
+int main() {
+    int testCases;
+    cin >> testCases;
+    
+    while (testCases--) {
+        int num1, num2;
+        cin >> num1 >> num2;
+        
+        cout << checkProblems(num1, num2) << endl;
+    }
+    
+    return 0;
+}
