@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int T;
+	cin>>T;
+	while(T>0){
+	int  N;
+	int X;
+	cin>>N>>X;
+	
+	if(N<=X){
+	    cout<<"YES"<<endl;;
+	    
+	}
+	else{
+	    cout<<"NO"<<endl;
+	}
+	T--;
+	}
+	return 0;
+}
