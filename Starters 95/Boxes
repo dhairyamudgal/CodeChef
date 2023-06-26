@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+
+        vector<long long> a(n);
+        for (int i = 0; i < n; i++)
+            cin >> a[i];
+
+        sort(a.begin(), a.end());
+
+        vector<int> vv;
+        map<long long, int> mpp;
+
+        for (int i = 0; i < n; i++) {
+            long long v = log2(a[i]) + 1;
+            mpp[v]++;
+            vv.push_back(v);
+        }
+
+        sort(vv.begin(), vv.end());
+        long long x = mpp[vv[vv.size() - 1]];
+        cout << (x + 1) / 2 << endl;
+    }
+
+    return 0;
+}
