@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    for (int i = 0; i < t; i++) {
+        int p, v, k;
+        cin >> p >> v >> k;
+
+        vector<int> vai(p);
+        for (int j = 0; j < p; j++) {
+            cin >> vai[j];
+        }
+
+        int ld = *max_element(vai.begin(), vai.end()) + k - 1;
+        if (ld <= v) {
+            cout << "Yes" << endl;
+        } else {
+            cout << "No" << endl;
+        }
+    }
+
+    return 0;
+}
